@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+    <h1>RaViNa Restaurant</h1>
+    <p>Very Low Cost <span class="text-danger">& high hygenic</span> tasty Non-vegetarian <span class="text-danger">foods</span> List.</p>
+</div>
+
+<div class="row">
+
+    <!-- COLUMN ONE NAMED VIEW -->
+    <div class="col-sm-6">
+        <div ui-view="columnOne"></div>
+    </div>
+
+    <!-- COLUMN TWO NAMED VIEW -->
+    <div class="col-sm-6">
+        <div ui-view="columnTwo"></div>
+    </div>
+    
+    
+   
+
+</div>    
+</body>
+</html>

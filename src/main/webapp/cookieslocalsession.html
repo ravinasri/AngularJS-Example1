@@ -1,0 +1,62 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+    <script type="text/javascript">
+    
+        var app = angular.module('MyApp', ["ngStorage"])
+        app.controller('MyController', function ($localStorage,$window,$scope) {
+           
+        	$scope.localstorage = function () {
+            	 localStorage.setItem("Breakfast","Dhosa");
+            	 localStorage.setItem("Lunch","Meals");
+            	 var item1 = localStorage.getItem("Breakfast");
+            	 var item2 = localStorage.getItem("Lunch");
+            	 console.log(item1);
+            	 console.log(item2);
+            	 $window.alert(item1+" "+item2);
+            	 localstorage.removeItem("lunch");
+            	 /* localstorage.clear(); */
+            }
+           $scope.sessionstorage = function () {
+        	   sessionStorage.setItem("Dinner","eggs");
+          	 var item2 = sessionStorage.getItem("Dinner");
+          	 console.log(item2);
+          	 $window.alert(item2);
+            } 
+           
+           $scope.cookies = function () {
+        	   document.cookie="hello=true";
+        	   document.cookie="oncemore=true; expires=fri,14 feb 2020 10:22 IST"
+          	 console.log(cookie);
+          	 $window.alert(cookie);
+            } 
+
+           var data = {
+           'name' : 'ravina'
+           
+           }
+           
+           $scope.sample = function () { 
+          	 localStorage.setItem('sample_data', JSON.stringify(data));
+          	 if(localStorage.getItem('sample_data') != null){
+          	  data =(localStorage.getItem('sample_data'));
+          	   console.log(data);
+          	 $window.alert(data);
+          }
+           }
+    
+        });
+    </script>
+    <div ng-app="MyApp" ng-controller="MyController">   
+        <input type="button" value="localstorage" ng-click="localstorage()" />
+        <input type="button" value="sessionstorage" ng-click="sessionstorage()" /> 
+        <input type="button" value="cookies" ng-click="cookies()" /> 
+         <input type="button" value="sample" ng-click="sample()" />
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- <h1 ng-repeat="x in scotches">{{x}}</h1> -->
+
+
+<table  border="2" style="width:100%">
+ <tr>
+    <th>Name</th>
+    <th>Price</th>
+    
+  </tr>
+    <tr ng-repeat="x in scotches">
+        <td>{{x.name}}</td>
+        <td>{{x.price}}</td>
+    </tr>
+</table>
+</body></html>
